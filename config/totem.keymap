@@ -11,15 +11,37 @@
 #define MEDIA 5
 
 / {
+  behaviors {
+    lht: left_hand_positional_hold_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LEFT_POSITIONAL_HOLD_TAP";
+      #binding-cells = <2>;
+      flavor = "tap-unless-interrupted";
+      tapping-term-ms = <100>;
+      quick-tap-ms = <200>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 35 36 37>;
+    };
+    rht: right_hand_positional_hold_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "RIGHT_POSITIONAL_HOLD_TAP";
+      #binding-cells = <2>;
+      flavor = "tap-unless-interrupted";
+      tapping-term-ms = <100>;
+      quick-tap-ms = <200>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34>;
+    };
+  };
   keymap {
     compatible = "zmk,keymap";
     base_layer {
       label = "BASE";
       bindings = <
-                    &kp Q       &kp W       &kp E       &kp R         &kp T                   &kp Y         &kp U         &kp I       &kp O       &kp P
-                    &mt LSHFT A &mt LCTRL S &mt LALT D  &mt LGUI F    &kp G                   &kp H         &mt RGUI J    &mt RCTRL K &mt RALT L  &mt RSHFT SEMI
-        &kp CAPS    &kp Z       &kp X       &kp C       &kp V         &kp B                   &kp N         &kp M         &kp COMMA   &kp DOT     &kp FSLH          &kp CAPS
-                                            &kp TAB     &lt NAV SPACE &lt MEDIA DEL           &lt SYM RET   &lt NUM BSPC  &lt FN ESC
+                    &kp Q         &kp W         &kp E       &kp R         &kp T                   &kp Y         &kp U         &kp I         &kp O       &kp P
+                    &lht LSHFT A  &lht LCTRL S  &lht LALT D &lht LGUI F   &kp G                   &kp H         &rht RGUI J   &rht RCTRL K  &rht RALT L &rht RSHFT SEMI
+        &kp CAPS    &kp Z         &kp X         &kp C       &kp V         &kp B                   &kp N         &kp M         &kp COMMA     &kp DOT     &kp FSLH          &kp CAPS
+                                                &kp TAB     &lt NAV SPACE &lt MEDIA DEL           &lt SYM RET   &lt NUM BSPC  &lt FN ESC
       >;
     };
     nav_layer {
