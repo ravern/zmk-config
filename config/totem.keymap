@@ -100,7 +100,7 @@
                 &kp GRAVE   &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR        &none   &none       &none       &none       &none
                 &kp TILDE   &kp DLLR  &kp PRCNT &kp CARET &kp SQT         &none   &kp RGUI    &kp RALT    &kp RCTRL   &kp RSHFT
         &none   &none       &kp EXCL  &kp AT    &kp HASH  &kp DQT         &none   &none       &none       &none       &none       &none
-                                      &kp LBKT  &kp RBKT  &kp PIPE        &none   &none       &none
+                                      &kp LBKT  &kp RBKT  &kp BSLH        &none   &none       &none
       >;
     };
     fn_layer {
